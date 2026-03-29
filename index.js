@@ -2,6 +2,18 @@
 const express = require('express')
 const app = express()
 
+// Rendering Static Files
+app.use(express.static('public'))
+
+// Allowing To Access To Information Coming From Forms
+app.use(express.urlencoded({ extended: true }))
+
+// Posting JSON Information, Work When We Do A JSON Request
+app.use(express.json())
+
+// Use Our Middleware
+app.use(logger) // Everything Must Come After This Middleware
+
 // Import Our User Routers
 const userRouter = require('./routes/users')
 
@@ -9,7 +21,7 @@ const userRouter = require('./routes/users')
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) =>{
-    res.send('Go to /users')
+    // res.send('Go to /users')
     // res.send('Hi') // Sending A Text Message
 
     // res.json({ message: 'Error' }) // Sending A JSON Message
@@ -35,5 +47,11 @@ app.get('/', (req, res) =>{
 
 // Always This Routes Will Start With /users/...
 app.use('/users', userRouter)
+
+// Middleware Part
+function logger(req, res, next){
+    console.log(req.originalUrl);
+    next()
+}
 
 app.listen(3500)
