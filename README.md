@@ -1,9 +1,10 @@
 # 🚀 ExpressJS Mastery Course
 
-Welcome to my ExpressJS learning repository! This project documents my journey through mastering ExpressJS, the most popular Node.js web server framework. This repository serves as a hands-on guide covering everything from basic routing to advanced middleware and view engines.
+Welcome to my ExpressJS learning repository! This project documents my journey through mastering ExpressJS, the most popular Node.js web server framework. This repository serves as a hands-on guide covering everything from basic routing to advanced database integration.
 
 ## 🛠 Features & Learning Points
 
+### 🔹 ExpressJS Basics
 - **Express Server Setup**: Core fundamentals of initializing and running an Express application.
 - **RESTful Routing**: Implementation of various HTTP methods (`GET`, `POST`, `PUT`, `DELETE`).
 - **Dynamic Routing**: Using `express.Router` for modular and scalable route management.
@@ -11,56 +12,61 @@ Welcome to my ExpressJS learning repository! This project documents my journey t
     - **Global Middleware**: Using `app.use()` for application-wide logic.
     - **Custom Middleware**: Implementation of custom loggers to track requests.
     - **Built-in Middleware**: Utilizing `express.json()` and `express.urlencoded()` for body parsing.
-- **Static File Serving**: Serving client-side assets (HTML, CSS, JS) from the `public` directory using `express.static`.
-- **Form Handling**: 
-    - Rendering forms with EJS.
-    - Processing `POST` data and handling form submissions.
-    - Managing redirections with `res.redirect`.
-- **Query Parameters**: Accessing and utilizing URL search parameters via `req.query`.
+- **Static File Serving**: Serving client-side assets (HTML, CSS, JS).
 - **View Engines (EJS)**: Rendering dynamic HTML content using Embedded JavaScript templates.
-- **Modern Paradigms**: Exploring modern ExpressJS 5.x features and best practices.
+
+### 🔹 Database Integration (MongoDB & Mongoose)
+- **Database Connection**: Establishing a secure connection to MongoDB using Mongoose.
+- **Schema & Models**: Defining data structures with Mongoose schemas for consistent data handling.
+- **CRUD Operations**: Complete implementation of Create, Read, Update, and Delete logic for database records.
+- **Async/Await**: Utilizing modern JavaScript asynchronous patterns for non-blocking database interactions.
+- **Error Handling**: Robust error management for database queries and server responses.
 
 ## 📂 Project Structure
 
+The repository is organized into distinct modules, each focusing on a specific area of ExpressJS:
+
 ```bash
-├── public/             # Static files (index.html, test.html)
-├── routes/             # Modular route handlers (e.g., users.js)
-├── views/              # EJS templates
-│   └── users/          # Domain-specific views (e.g., new.ejs)
-├── index.js            # Main entry point for the Express server
-├── package.json        # Project metadata and dependencies
-└── README.md           # Professional project documentation
+.
+├── ExpressJS Basics/             # Core fundamentals and routing
+│   ├── public/                   # Static files
+│   ├── routes/                   # Modular route handlers
+│   ├── views/                    # EJS templates
+│   ├── index.js                  # Module entry point
+│   └── package.json              # Module dependencies
+├── ExpressJS Database Integration/ # MongoDB & Mongoose integration
+│   ├── db.js                     # Database connection and models
+│   ├── index.js                  # Main server with CRUD routes
+│   └── package.json              # Module dependencies
+└── README.md                     # Project documentation
 ```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (Version 14 or higher recommended)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
+- [Node.js](https://nodejs.org/) (Version 14 or higher)
+- [MongoDB](https://www.mongodb.com/) (Local instance or Atlas)
+- [npm](https://www.npmjs.com/)
 
-### Installation
+### Installation & Running
 
-1. Clone the repository:
+Each module is independent. To run a specific module:
+
+1. Navigate to the module directory:
    ```bash
-   git clone https://github.com/OnlyLGoat/Enhance-ExpressJS-Skills.git
+   cd "ExpressJS Basics" # OR "ExpressJS Database Integration"
    ```
-2. Navigate to the project directory:
-   ```bash
-   cd ExpressJS
-   ```
-3. Install dependencies:
+2. Install dependencies:
    ```bash
    npm install
    ```
-
-### Running the Project
-
-To start the server in development mode with auto-reload:
-```bash
-npm run devStart
-```
-The server will be available at `http://localhost:3500`.
+3. Start the server (Dev mode):
+   ```bash
+   npm run devStart # Basics
+   # OR
+   npm run DevStart # Database Integration
+   ```
 
 ## 📈 Learning Roadmap
 
@@ -71,14 +77,10 @@ The server will be available at `http://localhost:3500`.
 - [x] EJS View Engine Integration
 - [x] Static File Serving
 - [x] Form Handling & Body Parsing
-- [x] Query Parameters & Redirection
-- [ ] Advanced Authentication Patterns (Next Step)
-- [ ] Database Integration with MongoDB/PostgreSQL (Planned)
-
-## 🤝 Contribution
-
-Feel free to explore the code! This is a personal learning project, but feedback and suggestions are always welcome.
+- [x] Database Integration with MongoDB/Mongoose (Current)
+- [ ] Advanced Authentication Patterns (JWT/Passport)
+- [ ] API Versioning & Documentation (Swagger)
+- [ ] Deployment & CI/CD
 
 ---
 **Maintained by**: OnlyLGoat
-**Inspired by**: Web Dev Simplified ExpressJS Guide
