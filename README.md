@@ -7,16 +7,26 @@ Welcome to my ExpressJS learning repository! This project documents my journey t
 - **Express Server Setup**: Core fundamentals of initializing and running an Express application.
 - **RESTful Routing**: Implementation of various HTTP methods (`GET`, `POST`, `PUT`, `DELETE`).
 - **Dynamic Routing**: Using `express.Router` for modular and scalable route management.
-- **Middleware Integration**: Understanding the request-response cycle and using `router.param` for specialized data handling.
+- **Middleware Integration**: 
+    - **Global Middleware**: Using `app.use()` for application-wide logic.
+    - **Custom Middleware**: Implementation of custom loggers to track requests.
+    - **Built-in Middleware**: Utilizing `express.json()` and `express.urlencoded()` for body parsing.
+- **Static File Serving**: Serving client-side assets (HTML, CSS, JS) from the `public` directory using `express.static`.
+- **Form Handling**: 
+    - Rendering forms with EJS.
+    - Processing `POST` data and handling form submissions.
+    - Managing redirections with `res.redirect`.
+- **Query Parameters**: Accessing and utilizing URL search parameters via `req.query`.
 - **View Engines (EJS)**: Rendering dynamic HTML content using Embedded JavaScript templates.
-- **Static File Serving**: Efficiently serving client-side assets.
 - **Modern Paradigms**: Exploring modern ExpressJS 5.x features and best practices.
 
 ## 📂 Project Structure
 
 ```bash
+├── public/             # Static files (index.html, test.html)
 ├── routes/             # Modular route handlers (e.g., users.js)
-├── views/              # EJS templates for dynamic UI
+├── views/              # EJS templates
+│   └── users/          # Domain-specific views (e.g., new.ejs)
 ├── index.js            # Main entry point for the Express server
 ├── package.json        # Project metadata and dependencies
 └── README.md           # Professional project documentation
@@ -59,6 +69,9 @@ The server will be available at `http://localhost:3500`.
 - [x] Advanced Routing with `express.Router`
 - [x] Middleware & `router.param`
 - [x] EJS View Engine Integration
+- [x] Static File Serving
+- [x] Form Handling & Body Parsing
+- [x] Query Parameters & Redirection
 - [ ] Advanced Authentication Patterns (Next Step)
 - [ ] Database Integration with MongoDB/PostgreSQL (Planned)
 
