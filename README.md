@@ -28,17 +28,12 @@ The repository is organized into distinct modules, each focusing on a specific a
 
 ```bash
 .
-├── ExpressJS Basics/             # Core fundamentals and routing
-│   ├── public/                   # Static files
-│   ├── routes/                   # Modular route handlers
-│   ├── views/                    # EJS templates
-│   ├── index.js                  # Module entry point
-│   └── package.json              # Module dependencies
-├── ExpressJS Database Integration/ # MongoDB & Mongoose integration
-│   ├── db.js                     # Database connection and models
-│   ├── index.js                  # Main server with CRUD routes
-│   └── package.json              # Module dependencies
-└── README.md                     # Project documentation
+├── 01_Basics/                    # Core fundamentals and routing
+├── 02_Database_Integration/      # MongoDB & Mongoose integration
+├── 03_Authentication_Patterns/   # Advanced Security & Auth
+│   ├── JWT Authentication/       # JSON Web Token implementation
+│   └── Exercice/                 # Hands-on practice
+└── README.md                     # Central documentation
 ```
 
 ## 🚀 Getting Started
@@ -55,7 +50,7 @@ Each module is independent. To run a specific module:
 
 1. Navigate to the module directory:
    ```bash
-   cd "ExpressJS Basics" # OR "ExpressJS Database Integration"
+   cd "01_Basics" # OR "02_Database_Integration" OR "03_Authentication_Patterns/JWT Authentication"
    ```
 2. Install dependencies:
    ```bash
@@ -63,9 +58,7 @@ Each module is independent. To run a specific module:
    ```
 3. Start the server (Dev mode):
    ```bash
-   npm run devStart # Basics
-   # OR
-   npm run DevStart # Database Integration
+   npm run devStart # Or the script defined in package.json
    ```
 
 ## 📈 Learning Roadmap
@@ -77,9 +70,10 @@ Each module is independent. To run a specific module:
 - [x] EJS View Engine Integration
 - [x] Static File Serving
 - [x] Form Handling & Body Parsing
-- [x] Database Integration with MongoDB/Mongoose (Current)
-- [ ] Advanced Authentication Patterns (JWT/Passport)
+- [x] Database Integration with MongoDB/Mongoose
+- [x] **JWT Authentication Patterns** (Current)
 - [ ] API Versioning & Documentation (Swagger)
+- [ ] Role-Based Access Control (RBAC)
 - [ ] Deployment & CI/CD
 
 ---
