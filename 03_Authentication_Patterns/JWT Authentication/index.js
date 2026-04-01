@@ -3,6 +3,7 @@ const app = express()
 const bcrypt = require("bcrypt")
 const jwt = require('jsonwebtoken')
 const Users = require('./database/utilisateur')
+const auth = require('./middleware/auth')
 
 app.use(express.json())
 
@@ -56,6 +57,14 @@ app.post('/login', async (req, res) => {
         .catch(error => {
             return res.status(500).json({message: error.message})
         })
+})
+
+app.get('/users', auth, async (req, res) => {
+    const users = await Users.find()
+    if(!users){
+        return res.status(403).json({ message: 'Error !' })
+    }
+    return res.status(200).json({ users: users })
 })
 
 app.listen(4000, () => console.log('Start Server !'))
