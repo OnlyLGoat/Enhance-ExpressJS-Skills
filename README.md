@@ -15,6 +15,12 @@ Welcome to my ExpressJS learning repository! This project documents my journey t
 - **Static File Serving**: Serving client-side assets (HTML, CSS, JS).
 - **View Engines (EJS)**: Rendering dynamic HTML content using Embedded JavaScript templates.
 
+### 🔹 Advanced Patterns & Microservices
+- **Microservices Architecture**: Orchestrating multiple independent services (User, Costume, Note, Product) as part of a distributed system.
+- **Role-Based Access Control (RBAC)**: Implementing granular permissions for different user roles (e.g., Styliste, Jury) within middleware.
+- **Stateless Auth Patterns**: Implementation of JWT-protected routes across cross-service communication.
+- **Security Middleware**: Custom implementation of role-verification and token-validation layers.
+
 ### 🔹 Database Integration (MongoDB & Mongoose)
 - **Database Connection**: Establishing a secure connection to MongoDB using Mongoose.
 - **Schema & Models**: Defining data structures with Mongoose schemas for consistent data handling.
@@ -28,6 +34,10 @@ The repository is organized into distinct modules, each focusing on a specific a
 
 ```bash
 .
+├── 00_Some_Exercices/            # Practice, Evaluations & Microservices
+│   ├── Gestion de defiles/       # Fashion Show System (Multi-service)
+│   ├── JWT Middleware 01/        # Distributed JWT & Business Logic
+│   └── CC1_Exercices/            # Evaluation tasks and CC1 practices
 ├── 01_Basics/                    # Core fundamentals and routing
 ├── 02_Database_Integration/      # MongoDB & Mongoose integration
 ├── 03_Authentication_Patterns/   # Advanced Security & Auth
@@ -61,6 +71,15 @@ Each module is independent. To run a specific module:
    npm run devStart # Or the script defined in package.json
    ```
 
+## 🧩 Running Microservices Practice
+
+For exercises in `00_Some_Exercices` (like *Gestion de defiles*), you may need to run multiple services simultaneously to test inter-service communication and auth patterns:
+
+1. **Auth/User Service**: Handles login and token generation.
+2. **Business Services**: (e.g., Note, Costume) Require valid tokens from the user service.
+
+**Tip:** Use multiple terminal tabs or a tool like `concurrently` to manage multiple running processes. Ensure your MongoDB instance is running before starting the services.
+
 ## 📈 Learning Roadmap
 
 - [x] Basic Server Setup
@@ -71,10 +90,12 @@ Each module is independent. To run a specific module:
 - [x] Static File Serving
 - [x] Form Handling & Body Parsing
 - [x] Database Integration with MongoDB/Mongoose
-- [x] **JWT Authentication Patterns** (Current)
-- [ ] API Versioning & Documentation (Swagger)
-- [ ] Role-Based Access Control (RBAC)
-- [ ] Deployment & CI/CD
+- [x] JWT Authentication Patterns
+- [x] Microservices Architecture Basics
+- [x] Role-Based Access Control (RBAC)
+- [/] API Versioning & Documentation (Swagger)
+- [ ] Deployment & CI/CD (GitHub Actions/Render)
+- [ ] Complex Microservices Inter-communication
 
 ---
 **Maintained by**: OnlyLGoat
